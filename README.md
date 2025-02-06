@@ -1,4 +1,57 @@
 ## Jira Frontend High Level Design
+### Data Model for Project Management Screen
+
+The data model for the Project Management screen includes the following entities and their relationships:
+
+1. **User**:
+  - `id`: Unique identifier for the user.
+  - `username`: The username of the user.
+  - `email`: The email address of the user.
+  - `role`: The role of the user (e.g., Admin, Developer, Viewer).
+  - `created_at`: Timestamp when the user was created.
+  - `updated_at`: Timestamp when the user was last updated.
+
+2. **Project**:
+  - `id`: Unique identifier for the project.
+  - `name`: The name of the project.
+  - `description`: A brief description of the project.
+  - `status`: The current status of the project (e.g., Active, Completed, On Hold).
+  - `start_date`: The start date of the project.
+  - `end_date`: The end date of the project.
+  - `created_at`: Timestamp when the project was created.
+  - `updated_at`: Timestamp when the project was last updated.
+  - `team_members`: List of users assigned to the project.
+
+3. **Issue**:
+  - `id`: Unique identifier for the issue.
+  - `title`: The title of the issue.
+  - `description`: A detailed description of the issue.
+  - `status`: The current status of the issue (e.g., Open, In Progress, Closed).
+  - `priority`: The priority level of the issue (e.g., Low, Medium, High).
+  - `assignee`: The user assigned to the issue.
+  - `reporter`: The user who reported the issue.
+  - `created_at`: Timestamp when the issue was created.
+  - `updated_at`: Timestamp when the issue was last updated.
+  - `project_id`: The identifier of the project to which the issue belongs.
+
+4. **Notification**:
+  - `id`: Unique identifier for the notification.
+  - `message`: The content of the notification.
+  - `type`: The type of notification (e.g., Issue Update, Project Update).
+  - `recipient`: The user who will receive the notification.
+  - `created_at`: Timestamp when the notification was created.
+  - `read`: Boolean indicating whether the notification has been read.
+
+### Relationships
+
+- A **User** can be assigned to multiple **Projects**.
+- A **Project** can have multiple **Users** as team members.
+- A **Project** can have multiple **Issues**.
+- An **Issue** is assigned to a single **User** (assignee) and reported by a single **User** (reporter).
+- A **User** can receive multiple **Notifications**.
+
+This data model ensures that all necessary information is captured and relationships between entities are well-defined, facilitating efficient data management and retrieval for the Project Management screen.
+
 
 ### Functional Requirements
 1. **User Authentication**: Users should be able to sign up, log in, and log out.
