@@ -1,4 +1,4 @@
-export default [
+const userLists = [
   {
     "id": 1,
     "name": "Alice Johnson",
@@ -21,3 +21,5 @@ export default [
     "avatar": "https://randomuser.me/api/portraits/men/3.jpg"
   }
 ];
+
+export default userLists;

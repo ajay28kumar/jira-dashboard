@@ -1,11 +1,12 @@
 import { TaskCard } from './TaskCard';
 
-const TaskLists = ({ taskList }) => {
+const TaskLists = ({ taskList, provided }) => {
   return (
-    <div>
+    <div ref={provided.innerRef} {...provided.droppableProps}>
       {taskList.map((task, index) => (
-        <TaskCard key={task.status} task={task} index={index}/>
+        <TaskCard key={task.id} task={task} index={index} />
       ))}
+      {provided.placeholder}
     </div>
   )
 }
