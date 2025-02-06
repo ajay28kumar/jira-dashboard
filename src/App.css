@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.task-board {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.task-container {
+  border: #282c34 solid 1px;
+  border-radius: 3px;
+  width: 100%;
+  background-color: rgb(244, 245, 247);
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.task-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  border: #f3efef solid 1px;
+  margin: 0.5rem;
+}
