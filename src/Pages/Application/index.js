@@ -1,9 +1,12 @@
+import React from "react";
 import { TaskBoard } from "./TaskBoard";
-
+import AssigneeList from "./AssigneeList";
 const Application = () => {
+  const [selectedUser, setSelectedUser] = React.useState("");
   return (
     <div>
-      <TaskBoard/>
+      <AssigneeList setSelectedUser={setSelectedUser}/>
+      <TaskBoard selectedUser={selectedUser}/>
     </div>
   );
 };

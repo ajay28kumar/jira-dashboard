@@ -1,9 +1,9 @@
 import React from 'react';
 import { Droppable } from 'react-beautiful-dnd';
-import tasks from '../../mockData/tasks';
+import { connect } from 'react-redux';
 import TaskLists from './TaskLists';
 
-export const TaskContainer = ({ type, id }) => {
+const TaskContainer = ({ type, id, tasks }) => {
   const taskList = tasks.filter((task) => task.status === id);
   return (
     <div>
@@ -18,3 +18,13 @@ export const TaskContainer = ({ type, id }) => {
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  console.log("state.tasks :", state);
+  return {
+    tasks: state.taskList
+  }
+}
+
+
+export default connect(mapStateToProps)(TaskContainer);
